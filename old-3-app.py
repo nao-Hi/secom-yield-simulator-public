@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import os
-import platform
 import altair as alt
 from sklearn.ensemble import RandomForestClassifier
 from imblearn.over_sampling import SMOTE
@@ -10,16 +9,8 @@ from imblearn.over_sampling import SMOTE
 # --- 1. 基本設定 ---
 st.set_page_config(page_title="SECOM 意思決定支援シミュレーター", layout="wide")
 
-# パス設定 (ローカルとStreamlit Cloud 用を自動的に切り替える)
-# base_dir = r"C:\Users\sr582\Downloads\キカガク\test3"
-
-# ローカル（VS Code）用
-if platform.system() == "Windows":
-    base_dir = r"C:\Users\sr582\Downloads\キカガク\test3"
-else:
-    # StreamlitCloud用パス
-    base_dir = "."
-
+# パス設定
+base_dir = r"C:\Users\sr582\Downloads\キカガク\test3"
 features_csv = os.path.join(base_dir, "data_processed", "secom_features_sorted.csv")
 labels_csv = os.path.join(base_dir, "data_processed", "secom_labels_sorted.csv")
 top_20_path = os.path.join(base_dir, "feature_selection", "top_20_features_list.csv")

@@ -3,24 +3,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
-import platform
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import recall_score, precision_score, average_precision_score, precision_recall_curve
 from imblearn.over_sampling import SMOTE
 
-# ==========================================================================
-# 1. パス設定とフォルダ準備 (ローカルとStreamlit Cloud 用を自動的に切り替える)
-# ==========================================================================
-# base_dir = r"C:\Users\sr582\Downloads\キカガク\test3"
-
-# ローカル（VS Code）用
-if platform.system() == "Windows":
-    base_dir = r"C:\Users\sr582\Downloads\キカガク\test3"
-else:
-     # StreamlitCloud用パス
-    base_dir = "."
-
+# ==========================================
+# 1. パス設定とフォルダ準備
+# ==========================================
+base_dir = r"C:\Users\sr582\Downloads\キカガク\test3"
 features_csv = os.path.join(base_dir, "data_processed", "secom_features_sorted.csv")
 labels_csv = os.path.join(base_dir, "data_processed", "secom_labels_sorted.csv")
 output_dir = os.path.join(base_dir, "feature_selection")
