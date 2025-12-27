@@ -1,0 +1,9 @@
+=== SECOM Yield Simulation: 1st Step Report ===
+Initial Features: 590
+Dropped (Missing > 50%): 28
+Dropped (Constant): 116
+Final Features for Simulation: 446
+
+=== Model Performance (SMOTE Effect) ===
+Baseline PR-AUC: 0.1674
+SMOTE Applied PR-AUC: 0.1914
