@@ -4,4 +4,3 @@ numpy
 scikit-learn
 imbalanced-learn
 altair
-platform
